@@ -29,6 +29,31 @@ public class RandomGuessWithExceptionHandling {
         System.out.println("NUMBER GUESSING GAME");
         System.out.println("*".repeat(50));
         System.out.println("Guess a number between 1 and 100.");
-  
+
+        while (guess != number) {
+            try {
+                System.out.print("Enter your guess: ");
+                guess = kb.nextInt();
+                attempts++;
+                if (guess > number) {
+                    System.out.println("Your guess is too high.");
+                }
+
+                else if (guess < number) {
+                    System.out.println("Your guess is too low.");
+                }
+
+                else {
+                    System.out.println();
+                    System.out.println("Correct!");
+                    System.out.println("You guessed the number in " + attempts + " attempts.");
+                }
+
+            } catch (Exception e) {
+
+                System.out.println("Invalid input. Please enter an integer.");
+                kb.nextLine();
+            }
+        }
     }
 }
