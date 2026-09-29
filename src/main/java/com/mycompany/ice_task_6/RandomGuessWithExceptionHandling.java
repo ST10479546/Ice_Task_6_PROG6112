@@ -21,16 +21,16 @@ public class RandomGuessWithExceptionHandling {
         // Generate a random number between 1 and 100
         int number = random.nextInt(100) + 1;
 
-        // Variables
-        int guess = 0;
-        int attempts = 0;
-
         // Is displayed to the user and asking the user to guess the number
         System.out.println("*".repeat(50));
         System.out.println("NUMBER GUESSING GAME");
         System.out.println("*".repeat(50));
         System.out.println("Guess a number between 1 and 100.");
 
+        // Variables
+        int guess = 0;
+        int attempts = 0;
+        
         // Keep asking until the correct number is guessed
         while (guess != number) {
             try {
@@ -42,19 +42,16 @@ public class RandomGuessWithExceptionHandling {
                 if (guess > number) {
                     System.out.println("Your guess is too high.");
                 }
-
                 // Check if guess is too low
                 else if (guess < number) {
                     System.out.println("Your guess is too low.");
                 }
-
                 // Correct guess
                 else {
                     System.out.println();
                     System.out.println("Correct!");
                     System.out.println("You guessed the number in " + attempts + " attempts.");
                 }
-
             } catch (Exception e) {
                 // Handle non-integer input
                 System.out.println("Invalid input. Please enter an integer.");
